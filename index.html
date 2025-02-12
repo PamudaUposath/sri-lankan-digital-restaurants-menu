@@ -5,26 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurant Menu</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Google Translate script -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en', // Enables translation to all available languages
+                autoDisplay: false  // Prevent auto-translation on page load
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </head>
 <body>
     <header>
-        <h1>Restaurant Menu</h1>
+        <h1>Handiye Kade (හන්දියෙ කඩේ)</h1>
     </header>
-    
+
     <main>
         <section class="menu-box">
             <h2>Menu</h2>
+            <!-- Google Translate widget -->
+            <div id="google_translate_element"></div>
+            <hr>
+            <br>
             <ul id="menu-list"></ul>
         </section>
-
-        <section id="dish-details" class="hidden">
-            <h2 id="dish-name"></h2>
-            <img id="dish-image" src="" alt="Dish Image">
-            <p id="dish-description"></p>
-            <p><strong>Price:</strong> <span id="dish-price"></span></p>
-        </section>
     </main>
-    
+
     <script src="script.js"></script>
 </body>
 </html>

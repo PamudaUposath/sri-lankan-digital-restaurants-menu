@@ -12,6 +12,93 @@ body {
     line-height: 1.6;
 }
 
+/* Menu Grid */
+ul#menu-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    padding: 0;
+    list-style-type: none;
+    justify-content: center;
+}
+
+ul#menu-list li {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    text-align: center;
+}
+
+ul#menu-list li:hover {
+    transform: scale(1.05);
+}
+
+/* Center the menu images */
+.menu-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+/* Popup */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    max-width: 500px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    display: none;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #ff7f50;
+}
+
+/* Popup Image */
+.popup-image {
+    width: 80%;
+    max-width: 250px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Blur Background */
+body.popup-active::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    z-index: 500;
+}
+
+
 /* Header Styles */
 header {
     background-color: #ff7f50;
@@ -49,6 +136,26 @@ ul#menu-list {
     gap: 20px;
     padding: 0;
 }
+
+ul#menu-list li img {
+    width: 80px; /* Smaller size */
+    height: 80px; /* Keep aspect ratio */
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.dish-details img {
+    width: 40%;  /* Responsive width */
+    max-width: 200px;  /* Limit size */
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+}
+
+
 
 ul#menu-list li {
     background-color: #fff;
@@ -140,4 +247,88 @@ ul#menu-list li:hover {
     #dish-price {
         font-size: 1.1rem;
     }
+}
+
+
+/* Popup Background Styling */
+/* Fixed size popup */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: auto;
+    width: 50%;  /* Fixed width */
+    height: 80%; /* Fixed height */
+    display: none; /* Hidden by default */
+    z-index: 1000;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    overflow-y: auto; /* To allow scrolling if content overflows */
+}
+
+
+
+/* Body blur effect */
+body.popup-active {
+    background-color: rgba(174, 165, 165, 0.3); /* Background blur effect */
+    overflow: hidden; /* Prevents scrolling */
+}
+
+
+
+/* Close Button (X) */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #ff7f50;
+}
+
+/* Popup Image */
+.popup-image {
+    width: 80%;
+    max-width: 250px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    
+}
+
+/* Blur background when popup is open
+body.popup-active::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    z-index: 500;
+} */
+
+
+/* Position Google Translate on the right side */
+#google_translate_element {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000; /* Higher than popup */
+    background: rgba(16, 16, 16, 0);
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    transition: filter 0.3s ease-in-out; /* Smooth transition for blur effect */
+}
+
+/* Apply blur when popup is active */
+.popup-active #google_translate_element {
+    filter: blur(5px); /* Adjust blur intensity */
 }
