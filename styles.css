@@ -10,6 +10,7 @@ body {
     background-color: #f5f5f5;
     color: #333;
     line-height: 1.6;
+    min-width: 216px;
 }
 
 /* Menu Grid */
@@ -104,13 +105,68 @@ header {
     background-color: #ff7f50;
     color: white;
     text-align: center;
-    padding: 20px 0;
+    padding: 15px 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 header h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+    white-space: nowrap;
 }
+
+/* Google Translate Widget */
+#google_translate_element {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    transition: filter 0.3s ease-in-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+        position: relative;
+    }
+
+header h1 {
+    font-size: 1.5rem;
+        white-space: normal;
+        margin-bottom: 15px;
+}
+#google_translate_element {
+    position: relative; /* Moves below the title */
+    margin-top: auto; /* Adds space between title and translator */
+    text-align: center;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    top: auto;
+    right: auto;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    transition: filter 0.3s ease-in-out;
+    
+}
+}
+
 
 /* Menu Box Styles */
 .menu-box {
@@ -261,7 +317,7 @@ ul#menu-list li:hover {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     padding: auto;
-    width: 50%;  /* Fixed width */
+    width: 80%;  /* Fixed width */
     height: 80%; /* Fixed height */
     display: none; /* Hidden by default */
     z-index: 1000;
@@ -316,17 +372,17 @@ body.popup-active::before {
 
 
 /* Position Google Translate on the right side */
-#google_translate_element {
+/* #google_translate_element {
     position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 1000; /* Higher than popup */
-    background: rgba(16, 16, 16, 0);
+    top: 15px;
+    right: 15px;
+    z-index: 1000; 
+    background: rgba(255, 255, 255, 0.2);
     padding: 5px;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-    transition: filter 0.3s ease-in-out; /* Smooth transition for blur effect */
-}
+    transition: filter 0.3s ease-in-out;
+} */
 
 /* Apply blur when popup is active */
 .popup-active #google_translate_element {
