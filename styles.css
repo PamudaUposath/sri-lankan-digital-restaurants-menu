@@ -1,0 +1,53 @@
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    background: #f4f4f4;
+}
+
+header h1 {
+    color: #333;
+    font-size: 2em;
+}
+
+.menu-box, #dish-details {
+    border: 2px solid #333;
+    padding: 15px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    width: 90%;
+    max-width: 400px;
+    text-align: left;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    cursor: pointer;
+    font-size: 18px;
+    margin: 10px 0;
+    color: blue;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+li:hover {
+    color: darkblue;
+}
+
+.hidden {
+    display: none;
+}
+
+#dish-details img {
+    max-width: 100%;
+    border-radius: 10px;
+    display: block;
+    margin: 10px 0;
+}
