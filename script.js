@@ -108,6 +108,8 @@ function showDishPopup(index) {
 
 
 
+
+
 // Function to hide the popup
 function hideDishPopup() {
     const popup = document.getElementById("dish-popup");

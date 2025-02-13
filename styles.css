@@ -388,3 +388,4 @@ body.popup-active::before {
 .popup-active #google_translate_element {
     filter: blur(5px); /* Adjust blur intensity */
 }
+
